@@ -1,0 +1,28 @@
+{
+  "_comment": "Curate the Selected Works chapter. pinned forces order (lowercase owner/repo). displayNames overrides the GitHub repo name with a friendlier label. descriptions overrides the GitHub About text. exclude suppresses a specific repo even if GitHub returns it.",
+  "pinned": [
+    "ipelengmekgwe/carsties",
+    "ipelengmekgwe/skinet",
+    "ipelengmekgwe/github-branch-manager",
+    "ipelengmekgwe/hiddenvilla",
+    "ipelengmekgwe/azureservicebusdemo",
+    "ipelengmekgwe/meditation-expo-react-native"
+  ],
+  "displayNames": {
+    "ipelengmekgwe/carsties": "Carsties — Auction Microservices",
+    "ipelengmekgwe/skinet": "Skinet — E-Commerce Platform",
+    "ipelengmekgwe/github-branch-manager": "GitHub Branch Manager",
+    "ipelengmekgwe/hiddenvilla": "Hidden Villa — Booking System",
+    "ipelengmekgwe/azureservicebusdemo": "Azure Service Bus Demo",
+    "ipelengmekgwe/meditation-expo-react-native": "Meditation App"
+  },
+  "descriptions": {
+    "ipelengmekgwe/carsties": "An online car-auction platform built with .NET 8 microservices, RabbitMQ + MassTransit, gRPC, SignalR, and a Next.js client.",
+    "ipelengmekgwe/skinet": "A full-stack e-commerce store — .NET 8 API, Angular 18 client, Stripe checkout, ASP.NET Identity, and a Redis-backed basket.",
+    "ipelengmekgwe/github-branch-manager": "A small .NET console utility for keeping a GitHub repo's branch list tidy — list, audit, and bulk-prune branches without clicking through the GitHub UI.",
+    "ipelengmekgwe/hiddenvilla": "A villa booking and reservations platform with Stripe checkout, role-based admin, and PDF confirmations — .NET 6 MVC + Razor.",
+    "ipelengmekgwe/azureservicebusdemo": "Hands-on .NET 8 samples for Azure Service Bus — queues, topics with filtered subscriptions, sessions, dead-letter handling, and scheduled messages.",
+    "ipelengmekgwe/meditation-expo-react-native": "A guided meditation timer for iOS & Android — Expo SDK 51, React Native, TypeScript, NativeWind, Expo Router, and expo-av."
+  },
+  "exclude": []
+}

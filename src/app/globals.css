@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Mekgwe & Co. — Design tokens
+   A storybook palette: ivory paper, deep ink, faded gold, rust red.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Palette */
+  --color-paper: oklch(0.96 0.02 85);          /* #F5EFE0 ivory */
+  --color-paper-shadow: oklch(0.92 0.025 85);
+  --color-paper-fold: oklch(0.86 0.03 85);
+  --color-ink: oklch(0.18 0.005 85);            /* near-black for body */
+  --color-ink-soft: oklch(0.32 0.01 85);
+  --color-ink-faint: oklch(0.55 0.012 85);
+  --color-gold: oklch(0.66 0.09 75);            /* faded gold accent */
+  --color-gold-soft: oklch(0.78 0.06 75);
+  --color-rust: oklch(0.51 0.14 35);            /* rust red headings */
+  --color-rust-soft: oklch(0.62 0.11 35);
+
+  /* Typography — paired serifs for prose, mono for code/skills */
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body: "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Menlo", "Consolas", monospace;
+
+  /* Spacing — book-like generous rhythm */
+  --spacing-page: 4rem;
+  --spacing-margin: 2.5rem;
+  --spacing-gutter: 1.5rem;
+
+  /* Radii */
+  --radius-page: 0.5rem;
+
+  /* Shadows — paper depth */
+  --shadow-page: 0 1px 2px oklch(0.5 0.02 85 / 0.08), 0 8px 24px oklch(0.5 0.02 85 / 0.12);
+  --shadow-deep: 0 4px 8px oklch(0.5 0.02 85 / 0.18), 0 24px 48px oklch(0.5 0.02 85 / 0.22);
+
+  /* Animation tokens */
+  --ease-page-turn: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Base
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    color-scheme: light;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    font-feature-settings: "kern", "liga", "onum"; /* old-style numerals */
+  }
+
+  /* Subtle paper grain overlaid on the page background */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1, 0 0 0 0 0.08, 0 0 0 0 0.05, 0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* Drop-cap for first paragraph of a chapter */
+  .chapter-prose > p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    float: left;
+    font-size: 4.5rem;
+    line-height: 0.9;
+    padding: 0.4rem 0.5rem 0 0;
+    color: var(--color-rust);
+    font-weight: 600;
+  }
+
+  ::selection {
+    background: var(--color-gold-soft);
+    color: var(--color-ink);
+  }
+
+  /* Honour reduced motion globally */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Utilities — book-specific
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .paper-page {
+    background: var(--color-paper);
+    box-shadow: var(--shadow-page);
+    border-radius: var(--radius-page);
+  }
+
+  .ink-rule {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-ink-faint) 20%,
+      var(--color-ink-faint) 80%,
+      transparent 100%
+    );
+  }
+
+  .small-caps {
+    font-variant-caps: small-caps;
+    letter-spacing: 0.08em;
+  }
+}

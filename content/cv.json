@@ -1,0 +1,234 @@
+{
+  "$schema": "../src/lib/cv-schema.json",
+  "person": {
+    "name": "Ipeleng Mekgwe",
+    "title": "Software Engineering Lead",
+    "location": "Cape Town, South Africa",
+    "email": "mekgwei@gmail.com",
+    "phone": "+27 76 837 9402",
+    "links": {
+      "github": "https://github.com/ipelengmekgwe",
+      "linkedin": "https://www.linkedin.com/in/ipeleng-mekgwe-402867119/"
+    }
+  },
+  "summary": "Results-driven software engineering lead with a decade of experience delivering robust solutions across fintech, marketing, logistics, and retail. Proficient in C#, SQL, JavaScript/TypeScript, and modern web technologies, with a proven track record of supporting mission-critical systems. Known for a strong work ethic, adaptability, and an ability to solve complex problems under pressure. Currently leading a team at FinChoice while pursuing a BSc in Information Technology.",
+  "skills": {
+    "Languages & Frameworks": [
+      "C#",
+      "TypeScript",
+      "JavaScript",
+      "T-SQL",
+      "HTML",
+      "CSS",
+      "ASP.NET (MVC, Web API)",
+      ".NET Core",
+      "Razor",
+      "Blazor",
+      "Windows Forms"
+    ],
+    "Front-End": ["Angular", "React", "Vue.js", "React Native", "Next.js"],
+    "Architecture & Cloud": [
+      "N-tier architecture",
+      "Clean Architecture",
+      "Microservices",
+      "Event-driven architecture",
+      "RabbitMQ",
+      "Azure Service Bus",
+      "Microsoft Azure",
+      "AWS",
+      "Docker / containers"
+    ],
+    "Database & Data": [
+      "SQL Server",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "SSRS",
+      "SSIS",
+      "BigQuery"
+    ],
+    "Practices & Tooling": [
+      "RESTful APIs",
+      "OOP",
+      "Agile & Scrum",
+      "GitHub Actions",
+      "Azure DevOps",
+      "Octopus Deploy"
+    ],
+    "Engineering Leadership": [
+      "Mentoring & coaching",
+      "Hiring & technical interviews",
+      "KPA management",
+      "Architecture forum participation",
+      "Sprint planning & ticket breakdown"
+    ]
+  },
+  "experience": [
+    {
+      "role": "Software Engineering Lead",
+      "company": "FinChoice",
+      "start": "2025-12",
+      "end": null,
+      "summary": "Technical and people leadership for the team that maintains FinChoice's core financial systems.",
+      "highlights": [
+        "Fulfil all Senior Software Engineer responsibilities while providing technical and people leadership to the team.",
+        "Administer and track team KPAs, ensuring alignment with business objectives and delivery standards.",
+        "Manage team leave planning and approvals to maintain delivery continuity.",
+        "Conduct technical and behavioural interviews, contributing to hiring decisions and team growth.",
+        "Facilitate and participate in Scrum ceremonies — stand-ups, sprint planning, reviews, and retrospectives.",
+        "Support the Project Manager during sprint planning by breaking down business requirements into clear, actionable Jira tickets with well-defined acceptance criteria.",
+        "Collaborate with other Engineering Leads to identify, prioritise, and resolve mission-critical system issues and production incidents.",
+        "Actively contribute to the Architecture Forum, providing input on system design, scalability, and long-term technical strategy.",
+        "Mentor and coach junior and intermediate engineers, supporting their technical development, code quality, and career growth."
+      ],
+      "stack": ["C#", "SQL", "Blazor", "MVC", "RabbitMQ", "Azure", "AWS"]
+    },
+    {
+      "role": "Senior Software Engineer",
+      "company": "FinChoice",
+      "start": "2024-02",
+      "end": "2025-12",
+      "summary": "Maintained the core lending and collections platform powering disbursements, collections, and month-end processing.",
+      "highlights": [
+        "Maintain and enhance core financial systems using C#, SQL, Blazor, and MVC, ensuring high availability and performance for business-critical functions.",
+        "Serve as a key point of contact for FinOps and back-office teams, resolving technical issues and improving internal processes through automation.",
+        "Manage and support the internal platform used by the call centre, delivering reliable functionality for customer engagement and operations.",
+        "Develop and monitor SSIS packages and scheduled ETL jobs to support data integrity, financial reporting, and regulatory compliance.",
+        "Develop and manage microservices and real-time messaging solutions using RabbitMQ for efficient service communication.",
+        "Work across the full software lifecycle using Agile methodologies and DevOps best practices."
+      ],
+      "stack": [
+        "C#",
+        "SQL",
+        "Blazor",
+        "MVC",
+        "SSIS",
+        "RabbitMQ",
+        "Azure",
+        "AWS"
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Dotdigital",
+      "start": "2021-03",
+      "end": "2024-01",
+      "summary": "Built and shipped scalable features for the Dotdigital marketing automation platform — won the 2023 internal hackathon.",
+      "highlights": [
+        "Leveraged C#, Angular, SQL, and BigQuery to build scalable and maintainable software solutions.",
+        "Collaborated with cross-functional teams and product managers to ensure successful project completion.",
+        "Built and maintained integrations and APIs for seamless data transfer between systems.",
+        "Implemented unit and integration tests to ensure software quality and maintainability.",
+        "Worked with Azure cloud platform and implemented CI/CD pipelines for smooth, timely software deployment.",
+        "Applied Agile methodologies to improve development and feature delivery."
+      ],
+      "stack": ["C#", "Angular", "SQL", "BigQuery", "Azure"]
+    },
+    {
+      "role": "Software Developer",
+      "company": "DPD Laser Logistics",
+      "start": "2019-04",
+      "end": "2021-03",
+      "summary": "Built internal systems across debtors, creditors, operations, mobile deliveries, customer service, and sales.",
+      "highlights": [
+        "Developed and maintained internal systems for debtors, creditors, operations, mobile deliveries, customer service, and sales using C#, SQL, Ionic, and Angular.",
+        "Built integrations and APIs for seamless data transfer.",
+        "Implemented unit tests to ensure software quality and maintainability.",
+        "Collaborated with the architect and stakeholders to gather requirements and ensure successful project completions."
+      ],
+      "stack": ["C#", "SQL", "Ionic", "Angular"]
+    },
+    {
+      "role": "Software Developer",
+      "company": "RedPanda Software",
+      "start": "2017-04",
+      "end": "2019-04",
+      "summary": "Delivered software solutions for retail clients — reports, ETL pipelines, and a Java debit-order gateway.",
+      "highlights": [
+        "Developed and maintained software solutions for clients using C#, SQL, Java, SSIS, SSRS, and ASP.Net MVC.",
+        "Collaborated with Development Product Managers (DPM) and stakeholders to gather requirements, provide technical guidance, and ensure successful project completions.",
+        "Built, maintained, and documented ETL processes; wrote reports and implemented data warehouse solutions for clients.",
+        "Maintained a Java gateway application to process debit orders.",
+        "Worked on CI/CD deployment using Octopus Deploy to ensure timely software releases.",
+        "Participated in Agile and Scrum development methodologies."
+      ],
+      "stack": [
+        "C#",
+        "SQL",
+        "Java",
+        "SSIS",
+        "SSRS",
+        "ASP.NET MVC",
+        "Octopus Deploy"
+      ]
+    },
+    {
+      "role": "Intern Software Developer",
+      "company": "RedPanda Software",
+      "start": "2016-02",
+      "end": "2017-03",
+      "summary": "Where it all started — first taste of professional engineering on retail clients' systems.",
+      "highlights": [
+        "Assisted senior developers in developing software solutions for clients using C#, SQL, SSIS, SSRS, and ASP.Net MVC.",
+        "Gained experience in ETL processes, writing reports, and data warehousing solutions for clients.",
+        "Participated in Agile and Scrum development methodologies."
+      ],
+      "stack": ["C#", "SQL", "SSIS", "SSRS", "ASP.NET MVC"]
+    }
+  ],
+  "education": [
+    {
+      "year": "2026 – 2028",
+      "institution": "Richfield",
+      "credential": "BSc Information Technology",
+      "status": "in-progress"
+    },
+    {
+      "year": "2013 – 2015",
+      "institution": "Orbit TVET College, Mogwase",
+      "credential": "N1 – N4 Certificate: Mechanical Engineering Studies"
+    },
+    {
+      "year": "2010",
+      "institution": "CTU Training Solutions, Pretoria",
+      "credential": "National Certificate: IT Systems Development"
+    },
+    {
+      "year": "2009",
+      "institution": "Hoërskool Grenswag, Rustenburg",
+      "credential": "National Senior Certificate: Grade 12 (Matric)"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Claude in Action",
+      "issuer": "Anthropic",
+      "verifyUrl": "https://verify.skilljar.com/c/8ig5g46hej8z"
+    },
+    {
+      "name": "MCPD: Microsoft Certified Professional Developer",
+      "issuer": "Microsoft",
+      "note": "Includes all underlying MCTS component certifications."
+    }
+  ],
+  "awards": [
+    {
+      "year": 2026,
+      "title": "TransUnion Rising Star Awards",
+      "status": "nominated",
+      "description": "Nominated in recognition of impact, growth, and contribution to the engineering function."
+    },
+    {
+      "year": 2023,
+      "title": "Dotdigital Hackathon Champions — Most Needed Feature",
+      "status": "won",
+      "description": "Built a 1st–3rd line support feature integrated into the back-office system of the main application. The solution significantly reduced the dependency on engineers for routine support tasks, saving valuable time for both the company and its customers."
+    }
+  ],
+  "interests": [
+    "React Native",
+    "AI",
+    "Machine Learning",
+    "Personal Development"
+  ]
+}
