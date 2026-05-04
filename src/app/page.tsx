@@ -1,7 +1,7 @@
 import { Bookmark } from "@/components/book/Bookmark";
 import { Cover } from "@/components/book/Cover";
 import { ChapterCredentials } from "@/components/chapter/Credentials";
-import { EpilogueStub } from "@/components/chapter/EpilogueStub";
+import { Epilogue } from "@/components/chapter/Epilogue";
 import { ChapterGlossary } from "@/components/chapter/Glossary";
 import { ChapterProjects } from "@/components/chapter/Projects";
 import { ChapterTimeline } from "@/components/chapter/Timeline";
@@ -17,7 +17,7 @@ export default function HomePage() {
       <ChapterGlossary />
       <ChapterProjects />
       <ChapterCredentials />
-      <EpilogueStub />
+      <Epilogue />
     </main>
   );
 }

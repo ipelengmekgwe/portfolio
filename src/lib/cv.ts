@@ -15,7 +15,9 @@ export type CV = {
     links: {
       github: string;
       linkedin: string;
-      [key: string]: string;
+      /** Optional — set once the deployed site URL is known. Shown on the CV PDF. */
+      website?: string;
+      [key: string]: string | undefined;
     };
   };
   summary: string;
