@@ -1,0 +1,32 @@
+name: Lighthouse
+
+# Runs once Vercel finishes deploying a preview for a PR. Posts performance,
+# accessibility, best-practice, and SEO scores as a PR comment, and fails the
+# check if performance < 90 or accessibility < 95.
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    name: Audit Vercel preview
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait for Vercel preview
+        id: vercel
+        uses: patrickedqvist/wait-for-vercel-preview@v1.3.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          max_timeout: 300
+
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: ${{ steps.vercel.outputs.url }}
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true

@@ -147,25 +147,48 @@ Set the same variables on **Vercel → Project → Settings → Environment Vari
 
 ---
 
+## Deploying to Vercel
+
+Once the repo is pushed to GitHub:
+
+1. <https://vercel.com/new> → **Import** the `ipelengmekgwe/portfolio` repo.
+2. Framework preset auto-detects as **Next.js**. Leave the build / output / install commands at the defaults.
+3. **Environment Variables** — add every row from the table above. The build is graceful if `RESEND_API_KEY` is missing, but the contact form won't send until it's set.
+4. **Deploy.** First build takes ~90 seconds. Subsequent pushes redeploy automatically.
+
+After the first deploy, copy the production URL (e.g. `https://portfolio-xxx.vercel.app`) and update `NEXT_PUBLIC_SITE_URL` in the Vercel env vars to that exact URL — that's what powers OpenGraph/canonical tags. Trigger a redeploy so the change takes effect.
+
+> **Custom favicon:** Vercel serves `src/app/icon.svg` automatically. Drop a higher-res PNG there if you want bitmap variants — Next.js will generate `apple-touch-icon` and the rest from any image you place in that folder.
+
+---
+
+## Continuous integration
+
+Two GitHub Actions live in `.github/workflows/`:
+
+| Workflow | Trigger | What it does |
+| --- | --- | --- |
+| `ci.yml` | every push + PR | `biome check`, `tsc --noEmit`, `vitest run`, `next build`. Fails the PR on any error. ~2 min. |
+| `lighthouse.yml` | every PR | Waits for the Vercel preview deploy, runs Lighthouse against it, posts scores as a PR comment, fails the check if **performance < 90** or **accessibility < 95**. |
+
+Thresholds live in `lighthouserc.json` — relax or tighten them there. No Vercel tokens are needed; `lighthouse.yml` reads the preview URL from the Vercel comment GitHub creates automatically.
+
+Cancel-in-progress is enabled, so pushing twice in quick succession only spends one CI run's worth of minutes.
+
+---
+
 ## Pushing for the first time
 
 ```bash
 git init
+git branch -M main
 git add .
 git commit -m "chore: scaffold Next.js 15 portfolio"
-git branch -M main
 git remote add origin git@github.com:ipelengmekgwe/portfolio.git
 git push -u origin main
 ```
 
-Then on Vercel:
-
-1. **Add New → Project** → import `ipelengmekgwe/portfolio`
-2. Framework preset auto-detects as **Next.js**
-3. Add the env vars from above
-4. Deploy
-
-The first push also triggers the GitHub Actions workflows (CI, Lighthouse, project-feed refresh).
+Then follow the Vercel and CI sections above.
 
 ---
 
