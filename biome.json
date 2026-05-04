@@ -16,6 +16,8 @@
       "test-results",
       "coverage",
       "public",
+      "scripts",
+      "_drafts",
       "*.tsbuildinfo",
       "next-env.d.ts"
     ]

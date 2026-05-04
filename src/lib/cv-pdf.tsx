@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
 export function CVDocument() {
   return (
     <Document
-      title={cv.person.name + " — CV"}
+      title={`${cv.person.name} — CV`}
       author={cv.person.name}
       subject="Curriculum Vitae"
       keywords="software engineering, .NET, C#, Cape Town"
@@ -205,7 +205,7 @@ export function CVDocument() {
           fixed
           style={styles.continued}
           render={({ pageNumber }) =>
-            pageNumber > 1 ? "continued ·  page " + pageNumber : ""
+            pageNumber > 1 ? `continued ·  page ${pageNumber}` : ""
           }
         />
         <Header />
@@ -221,7 +221,7 @@ export function CVDocument() {
           <Text style={styles.sectionHeading}>Experience</Text>
           <View style={styles.sectionRule} />
           {cv.experience.map((role) => (
-            <Role key={role.company + "-" + role.start} role={role} />
+            <Role key={`${role.company}-${role.start}`} role={role} />
           ))}
         </View>
 
@@ -245,7 +245,7 @@ export function CVDocument() {
               <View style={styles.sectionRule} />
               {cv.education.map((entry) => (
                 <View
-                  key={entry.year + "-" + entry.institution}
+                  key={`${entry.year}-${entry.institution}`}
                   style={styles.entryBlock}
                 >
                   <Text style={styles.entryHead}>{entry.credential}</Text>
@@ -317,7 +317,7 @@ function Header() {
     .replace(/\/$/, "");
   const websiteHref =
     websiteUrl && !/^https?:\/\//.test(websiteUrl)
-      ? "https://" + websiteUrl
+      ? `https://${websiteUrl}`
       : websiteUrl;
   const githubDisplay = cv.person.links.github
     .replace(/^https?:\/\//, "")
@@ -334,12 +334,12 @@ function Header() {
         <ContactLine
           prefix="E"
           value={cv.person.email}
-          href={"mailto:" + cv.person.email}
+          href={`mailto:${cv.person.email}`}
         />
         <ContactLine
           prefix="T"
           value={cv.person.phone}
-          href={"tel:" + phoneDigits}
+          href={`tel:${phoneDigits}`}
         />
         <ContactLine prefix="L" value={cv.person.location} />
         <ContactLine
