@@ -9,8 +9,6 @@ test("home page renders the cover and title", async ({ page }) => {
 test("home page has correct title and description metadata", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/Ipeleng Mekgwe/);
-  const description = await page
-    .locator('meta[name="description"]')
-    .getAttribute("content");
+  const description = await page.locator('meta[name="description"]').getAttribute("content");
   expect(description).toContain("portfolio");
 });

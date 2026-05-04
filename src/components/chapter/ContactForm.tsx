@@ -3,7 +3,7 @@
 import { CheckCircle2, Send, XCircle } from "lucide-react";
 import { useActionState } from "react";
 
-import { submitContact, type ContactState } from "@/app/actions/contact";
+import { type ContactState, submitContact } from "@/app/actions/contact";
 import { cn } from "@/lib/cn";
 
 const initialState: ContactState = { status: "idle" };
@@ -18,23 +18,20 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <div
-        role="status"
+      <output
         aria-live="polite"
-        className="paper-page p-8 text-center bg-paper-shadow/30 border border-gold/30"
+        className="block paper-page p-8 text-center bg-paper-shadow/30 border border-gold/30"
       >
-        <CheckCircle2
-          aria-hidden="true"
-          className="mx-auto size-10 text-rust mb-4"
-        />
+        <CheckCircle2 aria-hidden="true" className="mx-auto size-10 text-rust mb-4" />
         <p className="font-display text-2xl text-ink mb-2">Sent.</p>
         <p className="text-ink-soft">{state.message}</p>
-      </div>
+      </output>
     );
   }
 
-  const fieldErr = (key: keyof NonNullable<Extract<ContactState, { status: "error" }>["fieldErrors"]>) =>
-    state.status === "error" ? state.fieldErrors?.[key] : undefined;
+  const fieldErr = (
+    key: keyof NonNullable<Extract<ContactState, { status: "error" }>["fieldErrors"]>,
+  ) => (state.status === "error" ? state.fieldErrors?.[key] : undefined);
 
   return (
     <form action={formAction} className="space-y-5" noValidate>
@@ -64,12 +61,7 @@ export function ContactForm() {
         error={fieldErr("email")}
       />
 
-      <Field
-        label="Subject (optional)"
-        name="subject"
-        type="text"
-        error={fieldErr("subject")}
-      />
+      <Field label="Subject (optional)" name="subject" type="text" error={fieldErr("subject")} />
 
       <Field
         label="Message"
@@ -81,10 +73,7 @@ export function ContactForm() {
       />
 
       {state.status === "error" && !state.fieldErrors ? (
-        <p
-          role="alert"
-          className="flex items-start gap-2 text-sm text-rust"
-        >
+        <p role="alert" className="flex items-start gap-2 text-sm text-rust">
           <XCircle aria-hidden="true" className="size-4 mt-0.5 shrink-0" />
           <span>{state.message}</span>
         </p>
@@ -138,10 +127,7 @@ function Field({
 
   return (
     <div>
-      <label
-        htmlFor={id}
-        className="block font-mono text-xs small-caps text-ink-faint mb-2"
-      >
+      <label htmlFor={id} className="block font-mono text-xs small-caps text-ink-faint mb-2">
         {label}
         {required ? <span className="ml-1 text-rust">*</span> : null}
       </label>
@@ -170,10 +156,7 @@ function Field({
       )}
 
       {error ? (
-        <p
-          id={`${id}-error`}
-          className="mt-1.5 text-sm text-rust flex items-start gap-1.5"
-        >
+        <p id={`${id}-error`} className="mt-1.5 text-sm text-rust flex items-start gap-1.5">
           <XCircle aria-hidden="true" className="size-3.5 mt-0.5 shrink-0" />
           {error}
         </p>

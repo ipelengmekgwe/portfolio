@@ -17,10 +17,7 @@ export function ChapterCredentials() {
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
         <section aria-labelledby="education-heading">
-          <h3
-            id="education-heading"
-            className="font-display text-2xl md:text-3xl text-ink mb-4"
-          >
+          <h3 id="education-heading" className="font-display text-2xl md:text-3xl text-ink mb-4">
             Education
           </h3>
           <div className="ink-rule mb-6 w-24 bg-ink-faint/40" />
@@ -36,9 +33,7 @@ export function ChapterCredentials() {
                 <p className="font-display text-lg md:text-xl text-ink leading-snug mt-1">
                   {entry.credential}
                 </p>
-                <p className="font-display italic text-ink-soft">
-                  {entry.institution}
-                </p>
+                <p className="font-display italic text-ink-soft">{entry.institution}</p>
               </li>
             ))}
           </ol>
@@ -59,13 +54,9 @@ export function ChapterCredentials() {
                   <p className="font-display text-lg md:text-xl text-ink leading-snug">
                     {cert.name}
                   </p>
-                  <p className="font-display italic text-ink-soft">
-                    Issued by {cert.issuer}
-                  </p>
+                  <p className="font-display italic text-ink-soft">Issued by {cert.issuer}</p>
                   {cert.note ? (
-                    <p className="text-sm text-ink-soft mt-1 leading-relaxed">
-                      {cert.note}
-                    </p>
+                    <p className="text-sm text-ink-soft mt-1 leading-relaxed">{cert.note}</p>
                   ) : null}
                   {cert.verifyUrl ? (
                     <a
@@ -83,10 +74,7 @@ export function ChapterCredentials() {
           </section>
 
           <section aria-labelledby="awards-heading">
-            <h3
-              id="awards-heading"
-              className="font-display text-2xl md:text-3xl text-ink mb-4"
-            >
+            <h3 id="awards-heading" className="font-display text-2xl md:text-3xl text-ink mb-4">
               Awards
             </h3>
             <div className="ink-rule mb-6 w-24 bg-ink-faint/40" />

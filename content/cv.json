@@ -39,15 +39,7 @@
       "AWS",
       "Docker / containers"
     ],
-    "Database & Data": [
-      "SQL Server",
-      "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "SSRS",
-      "SSIS",
-      "BigQuery"
-    ],
+    "Database & Data": ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "SSRS", "SSIS", "BigQuery"],
     "Practices & Tooling": [
       "RESTful APIs",
       "OOP",
@@ -82,16 +74,7 @@
         "Actively contribute to the Architecture Forum, providing input on system design, scalability, and long-term technical strategy.",
         "Mentor and coach junior and intermediate engineers, supporting their technical development, code quality, and career growth."
       ],
-      "stack": [
-        "C#",
-        "SQL",
-        "Blazor",
-        "MVC",
-        "SSIS",
-        "RabbitMQ",
-        "Azure",
-        "AWS"
-      ]
+      "stack": ["C#", "SQL", "Blazor", "MVC", "SSIS", "RabbitMQ", "Azure", "AWS"]
     },
     {
       "role": "Senior Software Engineer",
@@ -107,16 +90,7 @@
         "Develop and manage microservices and real-time messaging solutions using RabbitMQ for efficient service communication.",
         "Work across the full software lifecycle using Agile methodologies and DevOps best practices."
       ],
-      "stack": [
-        "C#",
-        "SQL",
-        "Blazor",
-        "MVC",
-        "SSIS",
-        "RabbitMQ",
-        "Azure",
-        "AWS"
-      ]
+      "stack": ["C#", "SQL", "Blazor", "MVC", "SSIS", "RabbitMQ", "Azure", "AWS"]
     },
     {
       "role": "Software Engineer",
@@ -162,15 +136,7 @@
         "Worked on CI/CD deployment using Octopus Deploy to ensure timely software releases.",
         "Participated in Agile and Scrum development methodologies."
       ],
-      "stack": [
-        "C#",
-        "SQL",
-        "Java",
-        "SSIS",
-        "SSRS",
-        "ASP.NET MVC",
-        "Octopus Deploy"
-      ]
+      "stack": ["C#", "SQL", "Java", "SSIS", "SSRS", "ASP.NET MVC", "Octopus Deploy"]
     },
     {
       "role": "Intern Software Developer",
@@ -235,10 +201,5 @@
       "description": "Built a 1st–3rd line support feature integrated into the back-office system of the main application. The solution significantly reduced the dependency on engineers for routine support tasks, saving valuable time for both the company and its customers."
     }
   ],
-  "interests": [
-    "React Native",
-    "AI",
-    "Machine Learning",
-    "Personal Development"
-  ]
+  "interests": ["React Native", "AI", "Machine Learning", "Personal Development"]
 }

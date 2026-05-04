@@ -21,10 +21,7 @@ export function Epilogue() {
 
       <div className="grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
         <section aria-labelledby="contact-heading">
-          <h3
-            id="contact-heading"
-            className="font-display text-2xl md:text-3xl text-ink mb-4"
-          >
+          <h3 id="contact-heading" className="font-display text-2xl md:text-3xl text-ink mb-4">
             Send a message
           </h3>
           <div className="ink-rule mb-6 w-24 bg-ink-faint/40" />
@@ -33,9 +30,7 @@ export function Epilogue() {
 
         <aside className="space-y-10">
           <div>
-            <p className="font-mono text-xs small-caps text-ink-faint mb-4">
-              Or reach me directly
-            </p>
+            <p className="font-mono text-xs small-caps text-ink-faint mb-4">Or reach me directly</p>
             <ul className="space-y-3 list-none p-0">
               <li>
                 <a
@@ -76,31 +71,26 @@ export function Epilogue() {
           </div>
 
           <div>
-            <p className="font-mono text-xs small-caps text-ink-faint mb-4">
-              The traditional CV
-            </p>
+            <p className="font-mono text-xs small-caps text-ink-faint mb-4">The traditional CV</p>
             <a
               href="/cv"
               target="_blank"
-              rel="noopener"
+              rel="noreferrer noopener"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-page border border-ink-faint/30 hover:border-rust hover:text-rust transition-colors font-display text-lg"
             >
               <Download aria-hidden="true" className="size-4" />
               Download CV (PDF)
             </a>
             <p className="mt-2 text-sm text-ink-soft leading-relaxed">
-              Generated from <code className="font-mono text-xs">content/cv.json</code> at build time —
-              always matches what you see in the chapters.
+              Generated from <code className="font-mono text-xs">content/cv.json</code> at build
+              time — always matches what you see in the chapters.
             </p>
           </div>
         </aside>
       </div>
 
       <footer className="mt-16 pt-8 border-t border-ink-faint/20 font-mono text-[0.7rem] small-caps text-ink-faint text-center space-y-1">
-        <p>
-          Set in Fraunces &amp; EB Garamond · Built with Next.js 15 ·
-          Deployed on Vercel
-        </p>
+        <p>Set in Fraunces &amp; EB Garamond · Built with Next.js 15 · Deployed on Vercel</p>
         <p>
           © {new Date().getFullYear()} {cv.person.name} · All rights reserved
         </p>

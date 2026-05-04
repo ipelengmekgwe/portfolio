@@ -69,17 +69,9 @@ export function Cover() {
           </motion.div>
         </div>
 
-        <motion.div
-          style={{ opacity: reduced ? 1 : hintOpacity }}
-          className="text-center shrink-0"
-        >
-          <p className="font-mono text-xs small-caps text-ink-faint mb-2">
-            Scroll to open
-          </p>
-          <ArrowDown
-            aria-hidden="true"
-            className="mx-auto size-4 text-ink-faint animate-bounce"
-          />
+        <motion.div style={{ opacity: reduced ? 1 : hintOpacity }} className="text-center shrink-0">
+          <p className="font-mono text-xs small-caps text-ink-faint mb-2">Scroll to open</p>
+          <ArrowDown aria-hidden="true" className="mx-auto size-4 text-ink-faint animate-bounce" />
         </motion.div>
       </div>
     </section>

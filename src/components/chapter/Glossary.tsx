@@ -18,18 +18,15 @@ export function ChapterGlossary() {
       />
 
       <p className="chapter-prose text-lg leading-relaxed mb-10">
-        The list is honest, not exhaustive. Things I've shipped to production
-        in the past few years sit in bold; things I'm currently sharpening or
-        revisiting are in the same drawer but used less often. If a tool isn't
-        on this page, I haven't earned the right to claim it.
+        The list is honest, not exhaustive. Things I've shipped to production in the past few years
+        sit in bold; things I'm currently sharpening or revisiting are in the same drawer but used
+        less often. If a tool isn't on this page, I haven't earned the right to claim it.
       </p>
 
       <div className="space-y-10">
         {Object.entries(cv.skills).map(([bucket, items]) => (
           <section key={bucket}>
-            <h3 className="font-display text-2xl md:text-3xl text-ink mb-4">
-              {bucket}
-            </h3>
+            <h3 className="font-display text-2xl md:text-3xl text-ink mb-4">{bucket}</h3>
             <div className="ink-rule mb-5 w-24 bg-ink-faint/40" />
             <ul className="flex flex-wrap gap-x-3 gap-y-2 list-none p-0">
               {items.map((item) => (

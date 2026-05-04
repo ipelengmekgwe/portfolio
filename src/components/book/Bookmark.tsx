@@ -71,15 +71,11 @@ export function Bookmark() {
             <span
               className={cn(
                 "inline-block transition-all",
-                isActive
-                  ? "h-px w-10 bg-rust"
-                  : "h-px w-5 bg-ink-faint group-hover:w-8",
+                isActive ? "h-px w-10 bg-rust" : "h-px w-5 bg-ink-faint group-hover:w-8",
               )}
               aria-hidden="true"
             />
-            <span className="font-display text-sm w-5 text-right">
-              {link.numeral ?? "·"}
-            </span>
+            <span className="font-display text-sm w-5 text-right">{link.numeral ?? "·"}</span>
           </a>
         );
       })}

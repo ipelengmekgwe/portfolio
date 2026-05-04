@@ -9,11 +9,7 @@ import { z } from "zod";
    ──────────────────────────────────────────────────────────────────────────── */
 
 export const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(2, "Please tell me your name (at least 2 characters).")
-    .max(80),
+  name: z.string().trim().min(2, "Please tell me your name (at least 2 characters).").max(80),
   email: z.string().trim().email("That doesn't look like a valid email address.").max(160),
   subject: z
     .string()
@@ -50,7 +46,9 @@ function getClient(): Resend | null {
  * Returns a discriminated union so the caller can react to misconfiguration
  * (no API key) and delivery failures separately.
  */
-export async function sendContactEmail(input: ContactInput): Promise<
+export async function sendContactEmail(
+  input: ContactInput,
+): Promise<
   | { ok: true; id: string | null }
   | { ok: false; reason: "no-api-key" | "send-failed"; message: string }
 > {

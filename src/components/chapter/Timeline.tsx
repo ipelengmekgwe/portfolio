@@ -25,7 +25,10 @@ export function ChapterTimeline() {
         />
 
         {cv.experience.map((role, idx) => (
-          <li key={`${role.company}-${role.start}`} className="md:grid md:grid-cols-[8rem_1fr] md:gap-12">
+          <li
+            key={`${role.company}-${role.start}`}
+            className="md:grid md:grid-cols-[8rem_1fr] md:gap-12"
+          >
             <div className="md:text-right pr-0 md:pr-4 mb-3 md:mb-0">
               <p className="font-display text-3xl md:text-4xl text-rust leading-none">
                 {String(idx + 1).padStart(2, "0")}
@@ -50,9 +53,7 @@ export function ChapterTimeline() {
                 </span>
               </h3>
 
-              <p className="mt-3 text-lg leading-relaxed text-ink-soft">
-                {role.summary}
-              </p>
+              <p className="mt-3 text-lg leading-relaxed text-ink-soft">{role.summary}</p>
 
               <ul className="mt-5 space-y-2 list-disc list-outside pl-5 text-base leading-relaxed">
                 {role.highlights.slice(0, 4).map((h) => (

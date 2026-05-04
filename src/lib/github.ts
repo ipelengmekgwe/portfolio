@@ -103,9 +103,7 @@ export async function fetchProjects({ limit = 6 }: { limit?: number } = {}): Pro
     return [];
   }
 
-  const explicitExclude = new Set(
-    (featured.exclude ?? []).map((s) => s.toLowerCase()),
-  );
+  const explicitExclude = new Set((featured.exclude ?? []).map((s) => s.toLowerCase()));
 
   const filtered = repos.filter((r) => {
     if (r.private || r.archived || r.disabled) return false;
@@ -126,8 +124,7 @@ export async function fetchProjects({ limit = 6 }: { limit?: number } = {}): Pro
 
   // Pin order: featured.pinned first (in their listed order), then the rest.
   const pinnedOrder = (featured.pinned ?? []).map((s) => s.toLowerCase());
-  const pinIndex = (r: GithubRepo) =>
-    pinnedOrder.indexOf(r.full_name.toLowerCase());
+  const pinIndex = (r: GithubRepo) => pinnedOrder.indexOf(r.full_name.toLowerCase());
 
   filtered.sort((a, b) => {
     const ai = pinIndex(a);

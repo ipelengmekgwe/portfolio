@@ -2,7 +2,7 @@ import { ExternalLink, GitFork, Star } from "lucide-react";
 
 import { ChapterHeading } from "@/components/book/ChapterHeading";
 import { PageSpread } from "@/components/book/PageSpread";
-import { fetchProjects, formatPushed, languageColor, type Project } from "@/lib/github";
+import { type Project, fetchProjects, formatPushed, languageColor } from "@/lib/github";
 
 /**
  * Chapter III — Selected Works.
@@ -23,9 +23,9 @@ export async function ChapterProjects() {
       />
 
       <p className="chapter-prose text-lg leading-relaxed mb-10 max-w-prose mx-auto text-center">
-        These are my public repositories, sorted by recent activity. Anything
-        client-confidential lives elsewhere by request. Hover any card to read
-        the description and last-touched date; click through for the source.
+        These are my public repositories, sorted by recent activity. Anything client-confidential
+        lives elsewhere by request. Hover any card to read the description and last-touched date;
+        click through for the source.
       </p>
 
       {projects.length === 0 ? <EmptyShelf /> : <Shelf projects={projects} />}
@@ -108,9 +108,7 @@ function ProjectCard({ project }: { project: Project }) {
             {project.forks}
           </span>
         ) : null}
-        <span className="ml-auto small-caps">
-          updated {formatPushed(project.pushedAt)}
-        </span>
+        <span className="ml-auto small-caps">updated {formatPushed(project.pushedAt)}</span>
       </footer>
     </a>
   );
@@ -123,9 +121,7 @@ function ProjectCard({ project }: { project: Project }) {
 function EmptyShelf() {
   return (
     <div className="text-center max-w-prose mx-auto py-8">
-      <p className="font-display italic text-ink-soft">
-        The shelf is being restocked.
-      </p>
+      <p className="font-display italic text-ink-soft">The shelf is being restocked.</p>
       <div className="ink-rule w-1/3 mx-auto my-6 bg-gold" />
       <p className="font-mono text-xs small-caps text-ink-faint">
         ✦ couldn't reach github just now — try again in a moment ✦

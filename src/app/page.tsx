@@ -4,8 +4,8 @@ import { ChapterCredentials } from "@/components/chapter/Credentials";
 import { Epilogue } from "@/components/chapter/Epilogue";
 import { ChapterGlossary } from "@/components/chapter/Glossary";
 import { ChapterProjects } from "@/components/chapter/Projects";
-import { ChapterTimeline } from "@/components/chapter/Timeline";
 import { Prologue } from "@/components/chapter/Prologue";
+import { ChapterTimeline } from "@/components/chapter/Timeline";
 
 export default function HomePage() {
   return (

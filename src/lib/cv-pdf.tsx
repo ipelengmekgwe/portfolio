@@ -1,11 +1,4 @@
-import {
-  Document,
-  Link,
-  Page,
-  StyleSheet,
-  Text,
-  View,
-} from "@react-pdf/renderer";
+import { Document, Link, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 
 import { cv, formatRange } from "@/lib/cv";
 
@@ -204,9 +197,7 @@ export function CVDocument() {
         <Text
           fixed
           style={styles.continued}
-          render={({ pageNumber }) =>
-            pageNumber > 1 ? `continued ·  page ${pageNumber}` : ""
-          }
+          render={({ pageNumber }) => (pageNumber > 1 ? `continued ·  page ${pageNumber}` : "")}
         />
         <Header />
         <View style={styles.rule} />
@@ -244,10 +235,7 @@ export function CVDocument() {
               <Text style={styles.sectionHeading}>Education</Text>
               <View style={styles.sectionRule} />
               {cv.education.map((entry) => (
-                <View
-                  key={`${entry.year}-${entry.institution}`}
-                  style={styles.entryBlock}
-                >
+                <View key={`${entry.year}-${entry.institution}`} style={styles.entryBlock}>
                   <Text style={styles.entryHead}>{entry.credential}</Text>
                   <Text style={styles.entryItalic}>{entry.institution}</Text>
                   <Text style={styles.entryMeta}>
@@ -265,9 +253,7 @@ export function CVDocument() {
                 <View key={cert.name} style={styles.entryBlock}>
                   <Text style={styles.entryHead}>{cert.name}</Text>
                   <Text style={styles.entryItalic}>Issued by {cert.issuer}</Text>
-                  {cert.note ? (
-                    <Text style={styles.entryNote}>{cert.note}</Text>
-                  ) : null}
+                  {cert.note ? <Text style={styles.entryNote}>{cert.note}</Text> : null}
                   {cert.verifyUrl ? (
                     <Link
                       src={cert.verifyUrl}
@@ -303,7 +289,7 @@ export function CVDocument() {
         </View>
 
         <Text style={styles.footer} fixed>
-          {cv.person.name}  ·  {cv.person.title}  ·  {cv.person.location}
+          {cv.person.name} · {cv.person.title} · {cv.person.location}
         </Text>
       </Page>
     </Document>
@@ -312,16 +298,10 @@ export function CVDocument() {
 
 function Header() {
   const websiteUrl = cv.person.links.website ?? "";
-  const websiteDisplay = websiteUrl
-    .replace(/^https?:\/\//, "")
-    .replace(/\/$/, "");
+  const websiteDisplay = websiteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const websiteHref =
-    websiteUrl && !/^https?:\/\//.test(websiteUrl)
-      ? `https://${websiteUrl}`
-      : websiteUrl;
-  const githubDisplay = cv.person.links.github
-    .replace(/^https?:\/\//, "")
-    .replace(/\/$/, "");
+    websiteUrl && !/^https?:\/\//.test(websiteUrl) ? `https://${websiteUrl}` : websiteUrl;
+  const githubDisplay = cv.person.links.github.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const phoneDigits = cv.person.phone.replace(/\s+/g, "");
 
   return (
@@ -331,22 +311,10 @@ function Header() {
         <Text style={styles.title}>{cv.person.title}</Text>
       </View>
       <View style={styles.contact}>
-        <ContactLine
-          prefix="E"
-          value={cv.person.email}
-          href={`mailto:${cv.person.email}`}
-        />
-        <ContactLine
-          prefix="T"
-          value={cv.person.phone}
-          href={`tel:${phoneDigits}`}
-        />
+        <ContactLine prefix="E" value={cv.person.email} href={`mailto:${cv.person.email}`} />
+        <ContactLine prefix="T" value={cv.person.phone} href={`tel:${phoneDigits}`} />
         <ContactLine prefix="L" value={cv.person.location} />
-        <ContactLine
-          prefix="G"
-          value={githubDisplay}
-          href={cv.person.links.github}
-        />
+        <ContactLine prefix="G" value={githubDisplay} href={cv.person.links.github} />
         {websiteDisplay ? (
           <ContactLine prefix="W" value={websiteDisplay} href={websiteHref} />
         ) : null}
@@ -385,14 +353,14 @@ function Role({ role }: { role: (typeof cv.experience)[number] }) {
       <View style={styles.roleHeader}>
         <Text>
           <Text style={styles.roleTitle}>{role.role}</Text>
-          <Text style={styles.roleCompany}>  ·  {role.company}</Text>
+          <Text style={styles.roleCompany}> · {role.company}</Text>
         </Text>
         <Text style={styles.roleRange}>{formatRange(role.start, role.end)}</Text>
       </View>
       <Text style={styles.roleSummary}>{role.summary}</Text>
       {role.highlights.slice(0, 4).map((h) => (
         <Text key={h} style={styles.bullet}>
-          ·  {h}
+          · {h}
         </Text>
       ))}
       {role.stack.length > 0 ? (

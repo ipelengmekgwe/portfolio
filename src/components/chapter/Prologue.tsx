@@ -18,35 +18,27 @@ export function Prologue() {
       <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
         <div className="chapter-prose space-y-5 text-lg leading-relaxed">
           <p>
-            I'm a Software Engineering Lead based in Cape Town. For the past
-            decade I've been quietly stitching together fintech ledgers,
-            marketing platforms, courier systems, and retail back-offices —
-            mostly in C# and SQL, with whichever front end the job called for.
+            I'm a Software Engineering Lead based in Cape Town. For the past decade I've been
+            quietly stitching together fintech ledgers, marketing platforms, courier systems, and
+            retail back-offices — mostly in C# and SQL, with whichever front end the job called for.
           </p>
           <p>
-            Today I lead a team at FinChoice, where I'm equal parts engineer,
-            mentor, and translator between business problems and technical
-            solutions. I'm also studying part-time toward a BSc in Information
-            Technology — because there's always more to learn, and I like the
+            Today I lead a team at FinChoice, where I'm equal parts engineer, mentor, and translator
+            between business problems and technical solutions. I'm also studying part-time toward a
+            BSc in Information Technology — because there's always more to learn, and I like the
             discipline of doing it on paper as well as on the keyboard.
           </p>
           <p>
-            This site is the longer version of my CV. Five chapters, no
-            recruiter dust. Read in order, or skip ahead from the table of
-            contents.
+            This site is the longer version of my CV. Five chapters, no recruiter dust. Read in
+            order, or skip ahead from the table of contents.
           </p>
         </div>
 
         <aside className="md:border-l md:border-ink-faint/30 md:pl-12">
-          <p className="font-mono text-xs small-caps text-ink-faint mb-6">
-            Table of contents
-          </p>
+          <p className="font-mono text-xs small-caps text-ink-faint mb-6">Table of contents</p>
           <ol className="space-y-4">
             {TOC.map((entry) => (
-              <li
-                key={entry.id}
-                className="flex items-baseline justify-between gap-4"
-              >
+              <li key={entry.id} className="flex items-baseline justify-between gap-4">
                 <a
                   href={`#${entry.id}`}
                   className="group flex items-baseline gap-3 hover:text-rust transition-colors"

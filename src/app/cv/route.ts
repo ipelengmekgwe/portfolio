@@ -13,9 +13,7 @@ import { CVDocument } from "@/lib/cv-pdf";
 export const dynamic = "force-dynamic";
 
 export async function GET(): Promise<Response> {
-  const stream = (await renderToStream(
-    createElement(CVDocument),
-  )) as unknown as ReadableStream;
+  const stream = (await renderToStream(createElement(CVDocument))) as unknown as ReadableStream;
 
   return new Response(stream, {
     headers: {

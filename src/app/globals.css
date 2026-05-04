@@ -7,15 +7,15 @@
 
 @theme {
   /* Palette */
-  --color-paper: oklch(0.96 0.02 85);          /* #F5EFE0 ivory */
+  --color-paper: oklch(0.96 0.02 85); /* #F5EFE0 ivory */
   --color-paper-shadow: oklch(0.92 0.025 85);
   --color-paper-fold: oklch(0.86 0.03 85);
-  --color-ink: oklch(0.18 0.005 85);            /* near-black for body */
+  --color-ink: oklch(0.18 0.005 85); /* near-black for body */
   --color-ink-soft: oklch(0.32 0.01 85);
   --color-ink-faint: oklch(0.55 0.012 85);
-  --color-gold: oklch(0.66 0.09 75);            /* faded gold accent */
+  --color-gold: oklch(0.66 0.09 75); /* faded gold accent */
   --color-gold-soft: oklch(0.78 0.06 75);
-  --color-rust: oklch(0.51 0.14 35);            /* rust red headings */
+  --color-rust: oklch(0.51 0.14 35); /* rust red headings */
   --color-rust-soft: oklch(0.62 0.11 35);
 
   /* Typography — paired serifs for prose, mono for code/skills */
@@ -72,7 +72,10 @@
     mix-blend-mode: multiply;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     font-weight: 500;
     color: var(--color-ink);

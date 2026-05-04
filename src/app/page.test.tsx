@@ -12,9 +12,7 @@ import { Prologue } from "@/components/chapter/Prologue";
 describe("Prologue", () => {
   it("renders the Hello introduction", () => {
     render(<Prologue />);
-    expect(
-      screen.getByRole("heading", { level: 2, name: /hello/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: /hello/i })).toBeInTheDocument();
   });
 
   it("renders the table of contents with all four chapters and the epilogue", () => {
