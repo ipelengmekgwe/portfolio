@@ -29,7 +29,7 @@ export const contactSchema = z.object({
 export type ContactInput = z.infer<typeof contactSchema>;
 
 const FROM = process.env.CONTACT_FROM_EMAIL ?? "onboarding@resend.dev";
-const TO = process.env.CONTACT_TO_EMAIL ?? "mekgwei@gmail.com";
+const TO = process.env.CONTACT_TO_EMAIL ?? "hello@ipeleng.dev";
 
 let cachedClient: Resend | null = null;
 function getClient(): Resend | null {

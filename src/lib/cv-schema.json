@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CV",
+  "description": "Schema for content/cv.json — mirrors the CV type in src/lib/cv.ts. Keep the two in sync.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["person", "summary", "skills", "experience", "education", "certifications", "awards", "interests"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "title", "location", "email", "phone", "links"],
+      "properties": {
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "location": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "links": {
+          "type": "object",
+          "required": ["github", "linkedin"],
+          "properties": {
+            "github": { "type": "string", "format": "uri" },
+            "linkedin": { "type": "string", "format": "uri" },
+            "website": {
+              "type": "string",
+              "format": "uri",
+              "description": "Optional — shown on the CV PDF."
+            }
+          },
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    },
+    "summary": { "type": "string" },
+    "skills": {
+      "type": "object",
+      "description": "Category name → list of skills.",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "company", "start", "end", "summary", "highlights", "stack"],
+        "properties": {
+          "role": { "type": "string" },
+          "company": { "type": "string" },
+          "start": { "type": "string", "pattern": "^\\d{4}-\\d{2}$", "description": "YYYY-MM" },
+          "end": {
+            "oneOf": [
+              { "type": "string", "pattern": "^\\d{4}-\\d{2}$" },
+              { "type": "null" }
+            ],
+            "description": "YYYY-MM, or null for present"
+          },
+          "summary": { "type": "string" },
+          "highlights": { "type": "array", "items": { "type": "string" } },
+          "stack": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["year", "institution", "credential"],
+        "properties": {
+          "year": { "type": "string" },
+          "institution": { "type": "string" },
+          "credential": { "type": "string" },
+          "status": { "enum": ["in-progress", "completed"] }
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "issuer"],
+        "properties": {
+          "name": { "type": "string" },
+          "issuer": { "type": "string" },
+          "verifyUrl": { "type": "string", "format": "uri" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "awards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["year", "title", "description"],
+        "properties": {
+          "year": { "type": "integer" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "enum": ["won", "nominated"] }
+        }
+      }
+    },
+    "interests": { "type": "array", "items": { "type": "string" } }
+  }
+}

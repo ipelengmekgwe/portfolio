@@ -57,13 +57,13 @@ export async function submitContact(
       return {
         status: "error",
         message:
-          "The contact form isn't fully configured yet. Email me directly at mekgwei@gmail.com instead.",
+          "The contact form isn't fully configured yet. Email me directly at hello@ipeleng.dev instead.",
       };
     }
     return {
       status: "error",
       message:
-        "Something went wrong sending your message. Please try again, or email me directly at mekgwei@gmail.com.",
+        "Something went wrong sending your message. Please try again, or email me directly at hello@ipeleng.dev.",
     };
   }
 

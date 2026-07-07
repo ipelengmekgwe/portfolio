@@ -92,6 +92,17 @@ export function Epilogue() {
       <footer className="mt-16 pt-8 border-t border-ink-faint/20 font-mono text-[0.7rem] small-caps text-ink-faint text-center space-y-1">
         <p>Set in Fraunces &amp; EB Garamond · Built with Next.js 15 · Deployed on Vercel</p>
         <p>
+          Apps &amp; games:{" "}
+          <a
+            href="https://ipeleng.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-rust transition-colors"
+          >
+            ipeleng.dev
+          </a>
+        </p>
+        <p>
           © {new Date().getFullYear()} {cv.person.name} · All rights reserved
         </p>
       </footer>
