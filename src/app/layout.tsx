@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { EB_Garamond, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { cv } from "@/lib/cv";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
   },
   description:
     "A portfolio in five chapters. A decade of software engineering across fintech, marketing, logistics, and retail — written like a book.",
+  alternates: { canonical: "/" },
   applicationName: "Mekgwe & Co.",
   authors: [{ name: "Ipeleng Mekgwe", url: "https://github.com/ipelengmekgwe" }],
   creator: "Ipeleng Mekgwe",
@@ -80,9 +82,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: cv.person.name,
+    jobTitle: cv.person.title,
+    email: `mailto:${cv.person.email}`,
+    url: SITE_URL,
+    address: { "@type": "PostalAddress", addressLocality: cv.person.location },
+    sameAs: [cv.person.links.github, cv.person.links.linkedin, "https://ipeleng.dev"].filter(
+      Boolean,
+    ),
+  };
+
   return (
     <html lang="en" className={`${fraunces.variable} ${garamond.variable} ${jetbrains.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD built from our own cv.json
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
